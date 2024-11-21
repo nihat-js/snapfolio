@@ -1,0 +1,12 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="currentColor"
+  viewBox="0 0 384 512"
+  height="1em"
+  width="1em"
+  stroke="currentColor"
+  stroke-width="0"
+  class="size-4"
+>
+  <path d="M272 0H112C83.1 0 56 27.2 56 60V452c0 32.8 27.2 60 56 60h160c32.8 0 56-27.2 56-60V60c0-32.8-27.2-60-56-60zM192 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm80-80H112V80h160v320z"/>
+</svg>

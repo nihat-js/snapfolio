@@ -10,8 +10,10 @@ export default function Bio() {
       </div>
       <div className="p-6 pt-0">
         <p className="text-muted-foreground">
-          I am a software engineer with a passion for building scalable and
-          efficient web applications.
+          I'm a motivated full-stack web developer, specializing in PHP,
+          CodeIgniter, Laravel and Mysql. On the front-end side, I am
+          well-versed in React and Vue.js, two of the most popular JavaScript
+          libraries and frameworks
         </p>
       </div>
     </div>

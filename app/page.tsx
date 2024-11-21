@@ -3,13 +3,11 @@ import Bio from "./components/Bio";
 import FeaturedProjects from "./components/FeaturedProjects";
 import Skills from "./components/Skills";
 import WorkExperiences from "./components/WorkExperiences";
+import { skills } from "./config/settings";
 
 export default function Home() {
 
 
-  const workExperiences = [];
-
- 
 
   return (
     <main>

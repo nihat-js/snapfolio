@@ -20,7 +20,7 @@ export default function WorkExperiences() {
               />
               <div>
                 <h3 className="font-semibold">
-                  PHP Developer
+                  Laravel Developer
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Tripocell
@@ -75,10 +75,10 @@ export default function WorkExperiences() {
               />
               <div>
                 <h3 className="font-semibold">
-                  AVH LLC
+                Web Developer
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Web Developer
+                AVH LLC
                 </p>
               </div>
             </div>
@@ -109,8 +109,10 @@ export default function WorkExperiences() {
               </svg>2023-2024
             </p>
             <p className="text-sm mt-2">
-              Developed and maintained various client projects, focusing on
-              responsive design and performance optimization.
+              I use the CodeIgniter 3 framework to develop and maintain web
+              applications. My responsibilities include writing MySQL queries
+              proficiently and using Bootstrap and jQuery for front-end
+              development. .
             </p>
             <div className="mt-4 flex space-x-2 overflow-x-auto pb-2 w-full">
               <img
