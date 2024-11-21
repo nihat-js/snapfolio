@@ -1,4 +1,5 @@
 import React from "react";
+import { general } from "../config/settings";
 
 export default function Bio() {
   return (
@@ -10,10 +11,7 @@ export default function Bio() {
       </div>
       <div className="p-6 pt-0">
         <p className="text-muted-foreground">
-          I'm a motivated full-stack web developer, specializing in PHP,
-          CodeIgniter, Laravel and Mysql. On the front-end side, I am
-          well-versed in React and Vue.js, two of the most popular JavaScript
-          libraries and frameworks
+         {general.longBio}
         </p>
       </div>
     </div>

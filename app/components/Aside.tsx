@@ -1,6 +1,6 @@
 import React from "react";
 import Skills from "./Skills";
-import { links } from "../config/settings";
+import { general, links } from "../config/settings";
 import Image from "next/image";
 
 export default function Aside({ skills }: { skills: string[] }) {
@@ -24,15 +24,15 @@ export default function Aside({ skills }: { skills: string[] }) {
               />
               <div className="flex flex-col items-start justify-center">
                 <h1 className="font-bold md:mt-4 text-xl md:text-2xl">
-                  Nihat Abdullazade
+                  {general.fullName}
                 </h1>
                 <p className="text-sm md:text-base text-muted-foreground">
-                  Fullstack Developer
+                  {general.position}
                 </p>
               </div>
             </div>
             <p className="mt-2 text-start text-sm text-muted-foreground">
-              Don't think outside of the box.Think like there is no box.
+              {general.shortBio}
             </p>
             <a
               target="_blank"
@@ -50,53 +50,19 @@ export default function Aside({ skills }: { skills: string[] }) {
             </a>
 
             <div className="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full">
-              <a
-                target="_blank"
-                aria-label="Github Logo"
-                className="cursor-pointer flex items-center gap-2 group"
-                href={links.github.url}
-              >
-                <Image alt="Github" src="./github.svg" width={16} height={16} />
-                <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                  
-                  {links.github.name}
-                </p>
-              </a>
-              <a
-                target="_blank"
-                aria-label="LinkedIn Logo"
-                className="cursor-pointer flex items-center gap-2 group"
-                href={links.linkedin.url}
-              >
-               <Image alt="LinkedIn" src="./linkedin.svg" width={16} height={16} />
-                <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                  Nihat Abdullazade
-                </p>
-              </a>
-              <a
-                target="_blank"
-                aria-label="Instagram Logo"
-                className="cursor-pointer flex items-center gap-2 group"
-                href={links.instagram.url}
-              >
-               <Image alt="Twitter" src="./instagram.svg" width={16} height={16} />
-                <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                  nih1t
-                </p>
-              </a>
-              
-              <a
-                target="_blank"
-                aria-label="Phone Number"
-                className="cursor-pointer flex items-center gap-2 group"
-                href={links.instagram.url}
-              >
-               <Image alt="Twitter" src="./call.svg" width={16} height={16} />
-                <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
-                  nih1t
-                </p>
-              </a>
-
+              {links.map((link, index) => (
+                <a
+                  target="_blank"
+                  aria-label="Instagram Logo"
+                  className="cursor-pointer flex items-center gap-2 group"
+                  href={link.url}
+                >
+                  <Image alt="Twitter" src={link.logo} width={16} height={16} />
+                  <p className="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
+                    {link.name}
+                  </p>
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -108,7 +74,7 @@ export default function Aside({ skills }: { skills: string[] }) {
           </div>
         </div>
         <div className="p-6 pt-0">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 ">
             {skills.map((skill, index) => <Skills key={index} name={skill} />)}
           </div>
         </div>
