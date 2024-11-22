@@ -39,14 +39,14 @@ export default function Aside({ skills }: { skills: string[] }) {
               className="bg-blue-600 text-white inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-lg text-base font-semibold ring-2 ring-blue-500 ring-offset-2 transition-all duration-300 ease-in-out transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full py-3 px-6 mt-4 text-center"
               href="/cv-nihat.pdf"
             >
-              <span className="mr-2">📄</span> Download CV
+              <span className="mr-2">📄</span> Where is your CV
             </a>
             <a
               target="_blank"
               className="bg-teal-600 text-white inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-lg text-base font-semibold ring-2 ring-teal-500 ring-offset-2 transition-all duration-300 ease-in-out transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full py-3 px-6 mt-4 text-center"
               href="mailto:abdullazadenihat@gmail.com"
             >
-              <span className="mr-2">📧</span> Contact Me
+              <span className="mr-2">📧</span> Let me email you
             </a>
 
             <div className="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full">

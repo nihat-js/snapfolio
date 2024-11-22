@@ -3,7 +3,9 @@ export const general = {
   longBio: ` I'm a motivated full-stack web developer, specializing in PHP,
           CodeIgniter, Laravel and Mysql. On the front-end side, I am
           well-versed in React and Vue.js, two of the most popular JavaScript
-          libraries and frameworks`,
+          libraries and frameworks \n\n
+           My hobbies are creating individual games and tools. You can find and send feedback if you like it 
+          `,
   profileImage: "",
   mail: "a",
   gmail: "",
@@ -14,7 +16,8 @@ export const general = {
 export const skills = [
   "PHP",
   "Laravel",
-  "CodeIgniter",
+  "Code Igniter",
+  "Design Pattern",
   "Solid Principles",
   "Docker",
   "Javascript",
