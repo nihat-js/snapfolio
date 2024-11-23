@@ -1,16 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import { games } from "../config/games";
 
 export default function Index() {
-  const games = [
-    {
-      name: "Number Puzzle",
-      href: "/slide-puzzle",
-      description: "Slide puzzles into correct place",
-      image: "./games/number-slide-1.png",
-    },
-    // { name: 'Game 2', description: 'This is a description of game 2.', image: 'https://via.placeholder.com/150' },
-  ];
+ 
 
   return (
     <div className="min-h-screen  p-8">

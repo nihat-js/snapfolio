@@ -42,6 +42,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="hidden lg:block hover:underline">
+
         <div className="relative">
           <Image
             src="./notification.svg"
@@ -49,9 +50,8 @@ export default function Navbar() {
             height={32}
             alt="notification"
           />
-
-          <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-1">
-            3
+          <span className="absolute top-0 right-0 bg-red-500 text-white w-4 h-4 text-xs rounded-full px-2 py-1">
+            1
           </span>
         </div>
       </div>
