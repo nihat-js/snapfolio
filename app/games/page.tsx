@@ -2,13 +2,14 @@ import React from 'react';
 
 export default function Index() {
   const games = [
-    { name: 'Number Puzzle', description: 'Slide puzzles into correct place', image: 'https://via.placeholder.com/150' },
-    { name: 'Game 2', description: 'This is a description of game 2.', image: 'https://via.placeholder.com/150' },
+    { name: 'Number Puzzle', description: 'Slide puzzles into correct place', image: './games/number-slide-1.png' },
+    // { name: 'Game 2', description: 'This is a description of game 2.', image: 'https://via.placeholder.com/150' },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center mb-10">Mini Games Showcase</h1>
+    <div className="min-h-screen  p-8">
+      <h1 className="text-2xl font-bold  mb-3">Mini Games Showcase</h1>
+      <p className='mb-10'> Problem solver is my second name. And I use this skill for creating own solutions to that games   </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {games.map((game, index) => (
           <div

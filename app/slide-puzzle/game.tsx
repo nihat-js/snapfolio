@@ -7,6 +7,16 @@ export default function Game() {
     const [width, setWidth] = useState(4);
     const [selectedTileIndex, setselectedTileIndex] = useState<number>(0);
 
+    const [isMoving, setIsMoving] = useState(false);
+
+    const startMoving = () => {
+        setIsMoving(true);
+        console.log("animationstarterd");
+        setTimeout(() => {
+            setIsMoving(false); // Stop the animation after it completes
+        }, 500); // 500ms matches the animation duration
+    };
+
     const boardRef = useRef(board);
 
     const handleSwitch = () => {
@@ -117,16 +127,17 @@ export default function Game() {
         let possibleMove = possibleMoves.find((position) =>
             position[0] === tilePosition[0] && position[1] === tilePosition[1]
         );
-
-        if (possibleMove) {
-            let newBoard = [...board as number[]];
-            [newBoard[emptyTileIndex - 1], newBoard[tileIndex - 1]] = [
-                newBoard[tileIndex - 1],
-                newBoard[emptyTileIndex - 1],
-            ];
-            setBoard(newBoard);
+        if (!possibleMove) {
+            return;
         }
-        console.log(possibleMoves, possibleMove);
+
+        let newBoard = [...board as number[]];
+        [newBoard[emptyTileIndex - 1], newBoard[tileIndex - 1]] = [
+            newBoard[tileIndex - 1],
+            newBoard[emptyTileIndex - 1],
+        ];
+        setBoard(newBoard);
+        startMoving();
         return true;
     };
 
@@ -136,7 +147,7 @@ export default function Game() {
 
     return (
         <div className="puzzle-container">
-            <div className="  items-center ">
+            <div className="mb-8">
                 <p className="text-center text-md  text-gray-800">
                     Use the arrow keys to move the tiles. Press Enter to make a
                     move.
@@ -151,11 +162,11 @@ export default function Game() {
                             className="absolute opacity-0 w-0 h-0"
                             onChange={handleSwitch}
                         />
-                        <span className="block w-10 h-7 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-full cursor-pointer transition-colors duration-300">
+                        <span className="block w-12 h-7 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-full cursor-pointer transition-colors duration-300">
                             <span
                                 className={`block w-7 h-7 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
                                     width === 4
-                                        ? "translate-x-4"
+                                        ? "translate-x-6"
                                         : "translate-x-0"
                                 }`}
                             />
@@ -184,7 +195,9 @@ export default function Game() {
                                 selectedTileIndex == index
                                     ? "selected-tile"
                                     : ""
-                            } `}
+                            } 
+                            ${isMoving ? "moving" : ""}        
+                            `}
                             onClick={() => handleTileClick(tile)}
                             disabled={checkSolved()}
                         >
