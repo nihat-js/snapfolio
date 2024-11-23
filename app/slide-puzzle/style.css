@@ -1,0 +1,121 @@
+.tiles-wrapper{
+  display: grid;
+  grid-gap: 10px;
+  margin: 20px auto;
+  width: 480px;
+}
+.tile {
+  width: 120;
+  height: 120px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 12px;
+  /* margin: 5px; */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #45a049;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.selected-tile{
+  border : 1px solid #000;
+}
+
+.tile:hover {
+  background-color: #cccccc;
+  transform: scale(1.05);
+}
+
+.tile:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+.tile.empty {
+  background-color: transparent;
+  border: 2px dashed #cccccc;
+  box-shadow: none;
+}
+
+/* .tile-1 {
+  background-color: #f44336;
+}
+
+.tile-2 {
+  background-color: #ff9800;
+}
+
+.tile-3 {
+  background-color: #ffeb3b;
+}
+
+.tile-4 {
+  background-color: #4caf50;
+}
+
+.tile-5 {
+  background-color: #2196f3;
+}
+
+.tile-6 {
+  background-color: #9c27b0;
+}
+
+.tile-7 {
+  background-color: #3f51b5;
+}
+
+.tile-8 {
+  background-color: #00bcd4;
+}
+
+.tile-9 {
+  background-color: #009688;
+}
+
+.tile-10 {
+  background-color: #8bc34a;
+}
+
+.tile-11 {
+  background-color: #cddc39;
+}
+
+.tile-12 {
+  background-color: #673ab7;
+}
+
+.tile-13 {
+  background-color: #e91e63;
+}
+
+.tile-14 {
+  background-color: #795548;
+}
+
+.tile-15 {
+  background-color: #607d8b;
+} */
+
+/* Add animation for tile movements */
+@keyframes moveTile {
+  0% {
+      transform: scale(1);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.2);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.tile.moving {
+  animation: moveTile 0.5s ease-in-out;
+}
