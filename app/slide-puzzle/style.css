@@ -41,7 +41,7 @@
   box-shadow: none;
 }
 
-/* .tile-1 {
+.tile-1 {
   background-color: #f44336;
 }
 
@@ -99,7 +99,7 @@
 
 .tile-15 {
   background-color: #607d8b;
-} */
+}
 
 /* Add animation for tile movements */
 @keyframes moveTile {

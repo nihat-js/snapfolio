@@ -9,7 +9,6 @@ export default function Game() {
 
     const boardRef = useRef(board);
 
-
     const handleSwitch = () => {
         setWidth(width == 3 ? 4 : 3);
     };
@@ -42,18 +41,6 @@ export default function Game() {
         setBoard(tiles);
     }
 
-    function moveTileToEmpty(tileNumber: number) {
-        let tileIndex = (board?.indexOf(tileNumber) as number + 1) as number;
-        let emptyTileIndex = (board?.indexOf(-1) as number + 1) as number;
-
-        let newBoard = [...board as number[]];
-
-        [newBoard[emptyTileIndex - 1], newBoard[tileIndex - 1]] = [
-            newBoard[tileIndex - 1],
-            newBoard[emptyTileIndex - 1],
-        ];
-    }
-
     useEffect(() => {
         generateBoard();
     }, []);
@@ -72,7 +59,7 @@ export default function Game() {
             };
 
             let position = convertIndexToPosition(selectedTileIndex);
-            console.log(selectedTileIndex)
+            console.log(selectedTileIndex);
             let newPosition;
             if (e.key === "ArrowUp") {
                 newPosition = [position[0] - 1, position[1]];
@@ -89,11 +76,20 @@ export default function Game() {
             }
 
             if (isEmptyByPosition(newPosition)) {
-                moveTileToEmpty(selectedTileIndex);
+                // console.log("geldim bura");
+                // let emptyTileIndex = board?.indexOf(-1) as number;
+                // const newBoard = [...board as number[]];
+                // [newBoard[emptyTileIndex], newBoard[selectedTileIndex]] = [
+                //     newBoard[selectedTileIndex],
+                //     newBoard[emptyTileIndex],
+                // ];
+                // setBoard(newBoard);
+                // setselectedTileIndex(convertPositionToIndex(newPosition));
+                return;
             }
 
             let newIndex = convertPositionToIndex(newPosition);
-            console.log(newIndex)
+            console.log(newIndex);
             setselectedTileIndex(newIndex);
         }
 
@@ -102,7 +98,7 @@ export default function Game() {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [board,selectedTileIndex]);
+    }, [board, selectedTileIndex]);
 
     const handleTileClick = (tileNumber: number) => {
         let tileIndex = (board?.indexOf(tileNumber) as number + 1) as number;
@@ -140,35 +136,37 @@ export default function Game() {
 
     return (
         <div className="puzzle-container">
-            <div className="flex justify-between">
-                <h2 className="text-center text-xl font-bold">
+            <div className="  items-center ">
+                <p className="text-center text-md  text-gray-800">
                     Use the arrow keys to move the tiles. Press Enter to make a
                     move.
-                </h2>
-                <div className="flex items-center justify-center space-x-4">
-                    <label className="relative inline-block w-14 h-8">
+                </p>
+                <div className=" flex items-center justify-end mt-10">
+                    <label
+                        className="relative inline-block w-16"
+                        style={{ height: "32px" }}
+                    >
                         <input
                             type="checkbox"
                             className="absolute opacity-0 w-0 h-0"
                             onChange={handleSwitch}
                         />
-                        <span className="block w-14 h-8 bg-gray-300 rounded-full cursor-pointer transition-colors duration-300">
+                        <span className="block w-10 h-7 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-full cursor-pointer transition-colors duration-300">
                             <span
-                                className={`block w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
+                                className={`block w-7 h-7 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
                                     width === 4
-                                        ? "translate-x-6"
+                                        ? "translate-x-4"
                                         : "translate-x-0"
                                 }`}
-                            >
-                            </span>
+                            />
                         </span>
                     </label>
-                    <p className="text-xl font-semibold">
+
+                    <p className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
                         {width * width} Tiles
                     </p>
                 </div>
             </div>
-
             <div
                 className={[
                     "tiles-wrapper  ",
