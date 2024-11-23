@@ -3,11 +3,9 @@ import React from "react";
 import { games } from "../config/games";
 
 export default function Index() {
- 
-
   return (
     <div className="min-h-screen  p-8">
-      <h1 className="text-2xl font-bold  mb-3">Mini Games Showcase</h1>
+      <h1 className="text-2xl font-bold  mb-3">My Game Studio</h1>
       <p className="mb-10">
         Problem solver is my second name. And I use this skill for creating own
         solutions to that games
