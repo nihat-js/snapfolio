@@ -1,28 +1,7 @@
 import Link from "next/link";
+import { blogs } from "../config/blogs";
 
-const blogs = [
-  {
-    id: 1,
-    title: "Can we control time",
-    excerpt:
-      "Master jQuery with these essential tips and tricks for developers...",
-    image: "/blogs/blog-1.jpg",
-  },
-  {
-    id: 2,
-    title: "React Performance Optimization",
-    excerpt:
-      "Improve the performance of your React apps with these simple techniques...",
-    image: "/images/react-performance.jpg",
-  },
-  {
-    id: 3,
-    title: "CSS Grid Layouts",
-    excerpt:
-      "A complete guide to mastering CSS Grid and building modern layouts...",
-    image: "/images/css-grid.jpg",
-  },
-];
+
 
 export default function Home() {
   return (
@@ -46,7 +25,7 @@ export default function Home() {
               <h2 className="text-xl font-semibold text-gray-800">
                 {blog.title}
               </h2>
-              <p className="text-gray-600 mt-2">{blog.excerpt}</p>
+              <p className="text-gray-600 mt-2">{blog.text?.slice(0,100)}</p>
               <Link
                 className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
                 href={`/blogs/${blog.id}`}
