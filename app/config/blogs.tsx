@@ -9,18 +9,18 @@ export const blogs = [
      author : "Nihat",
      tags : ["life","tips"],
   },
-  {
-    id: 2,
-    title: "React Performance Optimization",
-    excerpt:
-      "Improve the performance of your React apps with these simple techniques...",
-    image: "/images/react-performance.jpg",
-  },
-  {
-    id: 3,
-    title: "CSS Grid Layouts",
-    excerpt:
-      "A complete guide to mastering CSS Grid and building modern layouts...",
-    image: "/images/css-grid.jpg",
-  },
+  // {
+  //   id: 2,
+  //   title: "React Performance Optimization",
+  //   excerpt:
+  //     "Improve the performance of your React apps with these simple techniques...",
+  //   image: "/images/react-performance.jpg",
+  // },
+  // {
+  //   id: 3,
+  //   title: "CSS Grid Layouts",
+  //   excerpt:
+  //     "A complete guide to mastering CSS Grid and building modern layouts...",
+  //   image: "/images/css-grid.jpg",
+  // },
 ];

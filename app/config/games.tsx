@@ -7,8 +7,14 @@ export  const games = [
   },
   {
     name: "Memory Game",
-    href: "/memory-game",
+  href: "/memory-game",
     description: "HOW GOOD IS YOUR MEMORY?",
     image: "./games/memory-game-1.png",
+  },
+  {
+    name: "Rus roulette",
+    href: "/rus-roulette",
+    description: "Will you survive?",
+    image: "https://placehold.co/600x400",
   },
 ];
