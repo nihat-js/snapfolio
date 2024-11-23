@@ -3,8 +3,8 @@ export const general = {
   longBio: ` I'm a motivated full-stack web developer, specializing in PHP,
           CodeIgniter, Laravel and Mysql. On the front-end side, I am
           well-versed in React and Vue.js, two of the most popular JavaScript
-          libraries and frameworks \n\n\t
-          I am a big fan of spending my free time creating games and tools. Check out few of them from navigation bar. Sure you will like them.
+          libraries and frameworks <br><br>
+          My hobby is creating games and tools.Explore some of my creations in the navigation bar – I’m sure you’ll find something fun and exciting to try out!.
 
           `,
   profileImage: "",

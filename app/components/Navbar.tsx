@@ -18,7 +18,7 @@ export default function Navbar() {
               rel="noreferrer"
               className="text-sm hover:underline font-semibold text-black cursor-pointer px-2"
             >
-              Play Game
+              Mini Games
             </Link>
           </li>
 
@@ -37,6 +37,14 @@ export default function Navbar() {
               className="text-sm hover:underline font-semibold text-black cursor-pointer px-2"
             >
               Learn
+            </Link>
+          </li>
+          <li className="relative cursor-pointer font-[500] text-[18px] text-black">
+            <Link
+              href={"/tools"}
+              className="text-sm hover:underline font-semibold text-black cursor-pointer px-2"
+            >
+              Tools
             </Link>
           </li>
         </ul>

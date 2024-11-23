@@ -10,8 +10,7 @@ export default function Bio() {
         </div>
       </div>
       <div className="p-6 pt-0">
-        <p className="text-muted-foreground">
-         {general.longBio}
+        <p className="text-muted-foreground" dangerouslySetInnerHTML={{__html : general.longBio}}>
         </p>
       </div>
     </div>
