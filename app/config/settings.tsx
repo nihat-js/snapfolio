@@ -1,3 +1,5 @@
+import { log } from "console";
+
 export const general = {
   shortBio: "Don't think outside of the box.Think like there is no box.",
   longBio: ` I'm a motivated full-stack web developer, specializing in PHP,
@@ -75,8 +77,7 @@ export const featuredProjects = [
 
 export const workExperiences = [
   {
-    logo:
-      "https://media.licdn.com/dms/image/v2/D4E0BAQEdkEhxoF_8tw/company-logo_200_200/company-logo_200_200/0/1726131651313?e=1740009600&v=beta&t=Q6SROnTsUZYOo5xd9uAkNqzW4x1iIaWYSiKTH4LJ6gE",
+		logo : "./icons/job-1.svg",
     position: "Laravel Devloper",
     company: "Tripocell LLC",
     duration: "2024 - Present",
@@ -85,7 +86,7 @@ export const workExperiences = [
       `,
   },
   {
-    // logo :
+		logo : "./icons/job-2.svg",
     position: "PHP Developer",
     company: "AVH LLC",
     duration: "2023 - 2024",

@@ -16,6 +16,7 @@ export default function WorkExperiences() {
 }
 
 export function WorkExperience({ data }: { data: any }) {
+	console.log(data);
   return (
     <>
       <li className="border-b last:border-b-0 pb-8 last:pb-0">
