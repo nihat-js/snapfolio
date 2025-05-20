@@ -1,8 +1,6 @@
 import Aside from "./components/Aside";
 import Bio from "./components/Bio";
 import FeaturedProjects from "./components/FeaturedProjects";
-import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
 import WorkExperiences from "./components/WorkExperiences";
 import { skills } from "./config/settings";
 

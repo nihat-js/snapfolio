@@ -20,7 +20,7 @@ export default function Aside({ skills }: { skills: string[] }) {
                 className="rounded-full size-12 md:w-full h-auto object-cover border-2"
                 style={{ color: "transparent" }}
                 // src="/avatar.svg"
-                src="https://media.licdn.com/dms/image/v2/D4E03AQHlnv21qUtgPg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712918671835?e=1737590400&v=beta&t=Qwtj9LmZiDkNKXpcug6X6hkZPUn7xxe_xXeCWKZjFRM"
+								src="/image.png"
               />
               <div className="flex flex-col items-start justify-center">
                 <h1 className="font-bold md:mt-4 text-xl md:text-2xl">
