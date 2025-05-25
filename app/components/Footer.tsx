@@ -112,7 +112,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-700 pt-6 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Your Name. All Rights Reserved.
+            © 2025 Nihat
           </p>
         </div>
       </div>
