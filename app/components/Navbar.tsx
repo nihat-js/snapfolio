@@ -62,20 +62,19 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
             <div className="flex items-center space-x-8">
-              {/*
+              {[
                 { name: "Home", href: "/" },
                 { name: "Mini Games", href: "/games" },
                 { name: "Learn", href: "/blogs" },
                 { name: "Tools", href: "/tools" }
-              */}
-              {["Home", "Mini Games", "Learn", "Tools"].map((item, index) => (
+              ].map((item, index) => (
                 <Link
                   key={index}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}
+                  href={item.href}
                   className="text-gray-900 relative group px-3 py-2 text-sm font-medium"
                 >
                   <span className="relative z-10 transform-gpu transition-transform duration-200 group-hover:scale-110 inline-block">
-                    {item}
+                    {item.name}
                   </span>
                   <span className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-500 group-hover:w-4/5 transition-all duration-300"></span>
                   <span className="absolute inset-0 -z-10 scale-75 rounded-full bg-blue-100 opacity-0 group-hover:scale-100 group-hover:opacity-20 transition-all duration-300"></span>

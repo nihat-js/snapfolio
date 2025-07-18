@@ -35,7 +35,7 @@ export function Project({ data: project }: { data: any }) {
             </div>
             <a target="_blank" rel="noreferrer"
               className="flex items-center gap-2 text-sm text-primary hover:underline"
-              href={project.github || "#"}
+              href={project.link ||  project.github || "#"}
             >
               View Project
               <Image

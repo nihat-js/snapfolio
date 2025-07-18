@@ -1,17 +1,11 @@
 import { log } from "console";
 
 export const general = {
-  shortBio: "Don't think outside of the box.Think like there is no box.",
+  shortBio: "Don't think outside of the box. Think like there is no box.",
   longBio: ` I'm a motivated full-stack web developer, specializing in PHP,
-          CodeIgniter, Laravel and Mysql. On the front-end side, I am
-          well-versed in React and Vue.js, two of the most popular JavaScript
-          libraries and frameworks <br><br>
-          My hobby is creating games and tools.Explore some of my creations in the navigation bar – I’m sure you’ll find something fun and exciting to try out!.
-
-          `,
+  Laravel, and Next.js. I have a passion for creating efficient and scalable web applications, and I'm always eager to learn new technologies. My goal is to build innovative solutions that make a difference in people's lives.`,
   profileImage: "",
   mail: "a",
-  gmail: "",
   fullName: "Nihat Abdullazade",
   position: "Full Stack Developer",
 };
@@ -19,17 +13,20 @@ export const general = {
 export const skills = [
   "PHP",
   "Laravel",
-  "Code Igniter",
-  "Design Pattern",
-  "Solid Principles",
-  "Docker",
-  "Javascript",
-  "React|TypeScript",
   "NextJS",
+  "Zustand",
+  "Design Patterns",
+  "Solid Principles",
+  "Javascript",
+  "TypeScript",
+  "React",
   "NodeJS/ExpressJS",
-  "MySQL",
+  "CodeIgniter",
+  "Docker",
+  "MySQL, PostgreSQL",
   "Git",
   "Linux",
+  "Restful APIs",
 ];
 
 export const links = [
@@ -61,35 +58,42 @@ export const links = [
 
 export const featuredProjects = [
   {
-    name: "Zaman",
-    description:
-      "Connect with friends on our social media platform, where you can share posts, comment, and chat in real time. Express your opinions with upvotes and downvote",
-    github: "https://github.com/nihat-js/zaman",
-    link: "",
-    tags: ["react", "node"],
-  },
-  {
-    name: "Magic Api",
-    description: "Alternative to jsonplaceholder Repo",
-    tags: ["node", "express"],
-  },
+    "name": "Asan CV",
+    "description": `Create your CV in minutes and download it in PDF format.`,
+    "github": "https://github.com/nihat-js/asan-cv",
+    "link": "https://asancv.com",
+    "tags": ["next"],
+  }
+  // {
+  //   name: "Zaman",
+  //   description:
+  //     "Connect with friends on our social media platform, where you can share posts, comment, and chat in real time. Express your opinions with upvotes and downvote",
+  //   github: "https://github.com/nihat-js/zaman",
+  //   link: "",
+  //   tags: ["react", "node"],
+  // },
+  // {
+  //   name: "Magic Api",
+  //   description: "Alternative to jsonplaceholder Repo",
+  //   tags: ["node", "express"],
+  // },
 ];
 
 export const workExperiences = [
   {
-		logo : "./icons/job-1.svg",
-    position: "Laravel Devloper",
-    company: "Tripocell LLC",
+    logo: "./icons/job-1.svg",
+    position: "Laravel Developer",
+    company: "ACM LLC",
     duration: "2024 - Present",
     text:
       `My job is to build and maintain web applications using the Laravel framework. I manage backend development with Eloquent and MySQL, while crafting dynamic front-end experiences with Blade and modern JavaScript tools."
       `,
   },
   {
-		logo : "./icons/job-2.svg",
+    logo: "./icons/job-2.svg",
     position: "PHP Developer",
     company: "AVH LLC",
-    duration: "2023 - 2024",
+    duration: "2022 - 2024",
     text:
       `I use the CodeIgniter 3 framework to develop and maintain web applications. My responsibilities
         include writing MySQL queries proficiently and using Bootstrap and jQuery for front-end
