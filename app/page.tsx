@@ -14,7 +14,7 @@ export default function Home() {
         <h2 className="text-xl font-bold mb-4">Work Experience</h2>
         <WorkExperiences />
         <h2 className="text-xl font-bold mb-4">Featured Projects</h2>
-        <FeaturedProjects />
+        <FeaturedProjects /> 
       </div>
     </main>
   );
