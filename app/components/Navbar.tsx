@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Sparkles } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,17 +46,17 @@ export default function Navbar() {
             className="flex items-center space-x-3 group"
           >
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-              <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-2.5 shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300 group-hover:scale-105">
-                <Sparkles 
-                  size={20} 
-                  className="text-white transition-transform duration-300 group-hover:rotate-12" 
+              <div className="absolute -inset-1 bg-gradient-to-r from-slate-700 to-slate-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+              <div className="relative bg-gradient-to-r from-slate-700 to-slate-900 rounded-xl p-2.5 shadow-lg group-hover:shadow-slate-500/25 transition-all duration-300 group-hover:scale-105">
+                <Code2
+                  size={20}
+                  className="text-white transition-transform duration-300 group-hover:rotate-12"
                 />
               </div>
             </div>
-            <span className="font-bold text-gray-900 text-xl tracking-tight relative overflow-hidden group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+            <span className="font-bold text-gray-900 text-xl tracking-tight relative overflow-hidden group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-700 group-hover:to-slate-900 transition-all duration-300">
               Nihat
-              <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+              <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </span>
           </Link>
 
@@ -65,9 +65,9 @@ export default function Navbar() {
             <div className="flex items-center space-x-1">
               {[
                 { name: "Home", href: "/" },
-                { name: "Mini Games", href: "/games" },
+                { name: "Tools", href: "/tools" },
                 { name: "Learn", href: "/blogs" },
-                { name: "Tools", href: "/tools" }
+                { name: "Mini Games", href: "/games" },
               ].map((item, index) => (
                 <Link
                   key={index}
@@ -78,9 +78,9 @@ export default function Navbar() {
                     {item.name}
                   </span>
                   {/* Hover background effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
                   {/* Active indicator */}
-                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-8 transition-all duration-300 rounded-full"></div>
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 group-hover:w-8 transition-all duration-300 rounded-full"></div>
                 </Link>
               ))}
             </div>
@@ -89,9 +89,9 @@ export default function Navbar() {
           {/* Notification */}
           <div className="hidden lg:flex items-center">
             <div className="relative">
-              <button 
+              <button
                 onClick={handleNotificationClick}
-                className="relative p-3 rounded-xl bg-gray-50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/50"
+                className="relative p-3 rounded-xl bg-gray-50 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300 group border border-gray-100 hover:border-slate-200 hover:shadow-lg hover:shadow-slate-100/50"
                 aria-label="Notifications"
               >
                 <Image
@@ -107,7 +107,7 @@ export default function Navbar() {
                   </span>
                 )}
               </button>
-              
+
               {/* Notification dropdown */}
               {showNotification && !notificationDismissed && (
                 <div className="absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 transform origin-top-right transition-all duration-300 overflow-hidden backdrop-blur-xl">
@@ -118,7 +118,7 @@ export default function Navbar() {
                         <div className="font-bold text-lg">Welcome to my portfolio!</div>
                         <div className="text-sm opacity-90 mt-1">Thanks for visiting my space</div>
                       </div>
-                      <button 
+                      <button
                         onClick={dismissNotification}
                         className="text-white/80 hover:text-white hover:bg-white/20 rounded-lg p-1.5 transition-all duration-200"
                         aria-label="Dismiss notification"
@@ -163,7 +163,7 @@ export default function Navbar() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-3 rounded-xl bg-gray-50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/50"
+              className="relative p-3 rounded-xl bg-gray-50 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300 border border-gray-100 hover:border-slate-200 hover:shadow-lg hover:shadow-slate-100/50"
               aria-expanded={isMenuOpen}
               aria-label="Toggle mobile menu"
             >
@@ -183,37 +183,37 @@ export default function Navbar() {
           <div className="px-4 pt-4 pb-6 space-y-2 bg-white/95 backdrop-blur-xl">
             <Link
               href="/"
-              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               🏠 Home
             </Link>
             <Link
               href="/games"
-              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               🎮 Mini Games
             </Link>
             <Link
               href="/blogs"
-              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               📚 Learn
             </Link>
             <Link
               href="/tools"
-              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
               🛠️ Tools
             </Link>
-            
+
             <div className="pt-2">
-              <button 
+              <button
                 onClick={handleNotificationClick}
-                className="flex items-center space-x-3 w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
+                className="flex items-center space-x-3 w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 transition-all duration-300"
               >
                 <div className="relative">
                   <Image
@@ -232,7 +232,7 @@ export default function Navbar() {
                 <span className="text-sm font-medium text-gray-700">🔔 Notifications</span>
               </button>
             </div>
-            
+
             {/* Mobile notification dropdown */}
             {showNotification && !notificationDismissed && (
               <div className="mt-3 mx-2 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 backdrop-blur-xl">
@@ -243,7 +243,7 @@ export default function Navbar() {
                       <div className="font-bold">Welcome to my portfolio!</div>
                       <div className="text-sm opacity-90 mt-1">Thanks for visiting my space</div>
                     </div>
-                    <button 
+                    <button
                       onClick={dismissNotification}
                       className="text-white/80 hover:text-white hover:bg-white/20 rounded-lg p-1.5 transition-all duration-200"
                       aria-label="Dismiss notification"

@@ -1,22 +1,29 @@
 import Link from "next/link";
 
 const tools = [
+
   {
     id: 1,
-    name: "Your IP",
-    href: "your-ip",
-    description: "What is my IP address",
+    name: "JSON Formatter",
+    href: "json-formatter",
+    description: "Format, validate, and prettify JSON data",
   },
   {
     id: 2,
-    name: "JSON Formatter",
-    href: "json-formatter", 
-    description: "Format, validate, and prettify JSON data",
+    name: "QR Code Generator",
+    href: "qr-generator",
+    description: "Generate QR codes for URLs, text, WiFi, and more",
   },
-  // { id: 3, name: "Math Solver", description: "Instant solutions for complex math problems." },
-  // { id: 4, name: "Game Maker", description: "Create your own games with this awesome tool!" },
-  // { id: 5, name: "Image Editor", description: "Edit your images with ease and precision." },
-  // { id: 6, name: "Code Formatter", description: "Beautify and format your code for readability." },
+  {
+    id: 3,
+    name: "Your IP",
+    href: "your-ip",
+    description: "Find out your public IP address and location.",
+  },
+  // { id: 4, name: "Math Solver", description: "Instant solutions for complex math problems." },
+  // { id: 5, name: "Game Maker", description: "Create your own games with this awesome tool!" },
+  // { id: 6, name: "Image Editor", description: "Edit your images with ease and precision." },
+  // { id: 7, name: "Code Formatter", description: "Beautify and format your code for readability." },
 ];
 
 const ToolsSection = () => {
