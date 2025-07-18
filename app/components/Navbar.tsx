@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Sparkles } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,32 +37,32 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 group"
+            className="flex items-center space-x-3 group"
           >
-            <span className="bg-blue-500 rounded-full p-1 shadow-md group-hover:shadow-blue-300/50 transition-all duration-300 group-hover:scale-105">
-              <Image
-                src="/nav-logo.svg"
-                width={24}
-                height={24}
-                alt="logo"
-                className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
-              />
-            </span>
-            <span className="font-bold text-gray-900 text-lg relative overflow-hidden group-hover:text-blue-600 transition-colors duration-300">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+              <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-2.5 shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300 group-hover:scale-105">
+                <Sparkles 
+                  size={20} 
+                  className="text-white transition-transform duration-300 group-hover:rotate-12" 
+                />
+              </div>
+            </div>
+            <span className="font-bold text-gray-900 text-xl tracking-tight relative overflow-hidden group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
               Nihat
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500 transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></span>
+              <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-1">
               {[
                 { name: "Home", href: "/" },
                 { name: "Mini Games", href: "/games" },
@@ -71,13 +72,15 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-gray-900 relative group px-3 py-2 text-sm font-medium"
+                  className="relative group px-6 py-3 text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-300"
                 >
-                  <span className="relative z-10 transform-gpu transition-transform duration-200 group-hover:scale-110 inline-block">
+                  <span className="relative z-10 transition-all duration-300 group-hover:scale-105">
                     {item.name}
                   </span>
-                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-500 group-hover:w-4/5 transition-all duration-300"></span>
-                  <span className="absolute inset-0 -z-10 scale-75 rounded-full bg-blue-100 opacity-0 group-hover:scale-100 group-hover:opacity-20 transition-all duration-300"></span>
+                  {/* Hover background effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
+                  {/* Active indicator */}
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-8 transition-all duration-300 rounded-full"></div>
                 </Link>
               ))}
             </div>
@@ -88,18 +91,18 @@ export default function Navbar() {
             <div className="relative">
               <button 
                 onClick={handleNotificationClick}
-                className="p-2 rounded-full hover:bg-gray-100 transition-all duration-300 group"
+                className="relative p-3 rounded-xl bg-gray-50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/50"
                 aria-label="Notifications"
               >
                 <Image
                   src="/notification.svg"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   alt="notification"
-                  className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                  className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 text-gray-600"
                 />
                 {hasUnreadNotification && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white w-5 h-5 flex items-center justify-center text-xs rounded-full group-hover:animate-bounce">
+                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-500 to-pink-500 text-white w-5 h-5 flex items-center justify-center text-xs rounded-full group-hover:animate-pulse shadow-lg">
                     1
                   </span>
                 )}
@@ -107,25 +110,28 @@ export default function Navbar() {
               
               {/* Notification dropdown */}
               {showNotification && !notificationDismissed && (
-                <div className="absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 z-50 transform origin-top-right transition-all duration-200 overflow-hidden">
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 flex justify-between items-start">
-                    <div>
-                      <div className="font-bold">Welcome to my portfolio!</div>
-                      <div className="text-sm opacity-90">Thanks for visiting</div>
+                <div className="absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 transform origin-top-right transition-all duration-300 overflow-hidden backdrop-blur-xl">
+                  <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white p-5 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent"></div>
+                    <div className="relative z-10 flex justify-between items-start">
+                      <div>
+                        <div className="font-bold text-lg">Welcome to my portfolio!</div>
+                        <div className="text-sm opacity-90 mt-1">Thanks for visiting my space</div>
+                      </div>
+                      <button 
+                        onClick={dismissNotification}
+                        className="text-white/80 hover:text-white hover:bg-white/20 rounded-lg p-1.5 transition-all duration-200"
+                        aria-label="Dismiss notification"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </button>
                     </div>
-                    <button 
-                      onClick={dismissNotification}
-                      className="text-white opacity-70 hover:opacity-100 transition-opacity"
-                      aria-label="Dismiss notification"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </button>
                   </div>
-                  <div className="p-4">
-                    <div className="flex items-start mb-4">
-                      <div className="bg-blue-100 p-2 rounded-full mr-3">
+                  <div className="p-5">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-3 rounded-xl">
                         <Image
                           src="/nav-logo.svg"
                           width={20}
@@ -134,9 +140,17 @@ export default function Navbar() {
                           className="w-5 h-5"
                         />
                       </div>
-                      <div>
-                        <p className="font-medium text-gray-800">Explore my projects</p>
-                        <p className="text-xs text-gray-500 mt-1">Check out my work and mini games</p>
+                      <div className="flex-1">
+                        <p className="font-semibold text-gray-800 text-sm">Explore my projects</p>
+                        <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">Discover innovative solutions, creative mini games, and insightful articles I've crafted</p>
+                        <div className="mt-3 flex space-x-2">
+                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            ✨ New
+                          </span>
+                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                            🎮 Games
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -149,14 +163,14 @@ export default function Navbar() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md hover:bg-gray-100 transition-all duration-300"
+              className="relative p-3 rounded-xl bg-gray-50 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-100/50"
               aria-expanded={isMenuOpen}
               aria-label="Toggle mobile menu"
             >
-              <div className="w-6 h-5 flex flex-col justify-between relative">
-                <span className={`w-full h-0.5 bg-gray-600 rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                <span className={`w-full h-0.5 bg-gray-600 rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`w-full h-0.5 bg-gray-600 rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <div className="w-5 h-4 flex flex-col justify-between relative">
+                <span className={`w-full h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                <span className={`w-full h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`w-full h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
               </div>
             </button>
           </div>
@@ -165,80 +179,84 @@ export default function Navbar() {
 
       {/* Mobile menu, show/hide based on state */}
       {isMenuOpen && (
-        <div className="lg:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
+        <div className="lg:hidden border-t border-gray-100">
+          <div className="px-4 pt-4 pb-6 space-y-2 bg-white/95 backdrop-blur-xl">
             <Link
               href="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              🏠 Home
             </Link>
             <Link
               href="/games"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
-              Mini Games
+              🎮 Mini Games
             </Link>
             <Link
               href="/blogs"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
-              Learn
+              📚 Learn
             </Link>
             <Link
               href="/tools"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
+              className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
-              Tools
+              🛠️ Tools
             </Link>
-            <div className="flex items-center px-3 py-2">
+            
+            <div className="pt-2">
               <button 
                 onClick={handleNotificationClick}
-                className="flex items-center space-x-3 w-full text-left"
+                className="flex items-center space-x-3 w-full text-left px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300"
               >
                 <div className="relative">
                   <Image
                     src="/notification.svg"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     alt="notification"
-                    className="w-6 h-6"
+                    className="w-5 h-5"
                   />
                   {hasUnreadNotification && (
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-white w-4 h-4 flex items-center justify-center text-xs rounded-full">
+                    <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-500 to-pink-500 text-white w-4 h-4 flex items-center justify-center text-xs rounded-full">
                       1
                     </span>
                   )}
                 </div>
-                <span className="ml-3 text-sm text-gray-700">Notifications</span>
+                <span className="text-sm font-medium text-gray-700">🔔 Notifications</span>
               </button>
             </div>
             
             {/* Mobile notification dropdown */}
             {showNotification && !notificationDismissed && (
-              <div className="mt-2 mx-2 bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-                <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 flex justify-between items-start">
-                  <div>
-                    <div className="font-bold">Welcome to my portfolio!</div>
-                    <div className="text-sm opacity-90">Thanks for visiting</div>
+              <div className="mt-3 mx-2 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 backdrop-blur-xl">
+                <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white p-4 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent"></div>
+                  <div className="relative z-10 flex justify-between items-start">
+                    <div>
+                      <div className="font-bold">Welcome to my portfolio!</div>
+                      <div className="text-sm opacity-90 mt-1">Thanks for visiting my space</div>
+                    </div>
+                    <button 
+                      onClick={dismissNotification}
+                      className="text-white/80 hover:text-white hover:bg-white/20 rounded-lg p-1.5 transition-all duration-200"
+                      aria-label="Dismiss notification"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </button>
                   </div>
-                  <button 
-                    onClick={dismissNotification}
-                    className="text-white opacity-70 hover:opacity-100 transition-opacity"
-                    aria-label="Dismiss notification"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
                 </div>
-                <div className="p-3">
-                  <div className="flex items-start mb-3">
-                    <div className="bg-blue-100 p-1.5 rounded-full mr-2">
+                <div className="p-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-2 rounded-xl">
                       <Image
                         src="/nav-logo.svg"
                         width={16}
@@ -247,9 +265,17 @@ export default function Navbar() {
                         className="w-4 h-4"
                       />
                     </div>
-                    <div>
-                      <p className="font-medium text-gray-800 text-sm">Explore my projects</p>
-                      <p className="text-xs text-gray-500 mt-0.5">Check out my work and mini games</p>
+                    <div className="flex-1">
+                      <p className="font-semibold text-gray-800 text-sm">Explore my projects</p>
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed">Discover innovative solutions and creative games</p>
+                      <div className="mt-2 flex space-x-2">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          ✨ New
+                        </span>
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                          🎮 Games
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

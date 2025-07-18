@@ -11,7 +11,6 @@ export default function Game() {
 
     const startMoving = () => {
         setIsMoving(true);
-        console.log("animationstarterd");
         setTimeout(() => {
             setIsMoving(false); // Stop the animation after it completes
         }, 500); // 500ms matches the animation duration
@@ -64,12 +63,11 @@ export default function Game() {
         function handleKeyDown(e: KeyboardEvent) {
             const isEmptyByPosition = function (position: number[]) {
                 let index = convertPositionToIndex(position);
-                // console.log({index})
+                // ({index})
                 return board![index] === -1;
             };
 
             let position = convertIndexToPosition(selectedTileIndex);
-            console.log(selectedTileIndex);
             let newPosition;
             if (e.key === "ArrowUp") {
                 newPosition = [position[0] - 1, position[1]];
@@ -86,7 +84,6 @@ export default function Game() {
             }
 
             if (isEmptyByPosition(newPosition)) {
-                // console.log("geldim bura");
                 // let emptyTileIndex = board?.indexOf(-1) as number;
                 // const newBoard = [...board as number[]];
                 // [newBoard[emptyTileIndex], newBoard[selectedTileIndex]] = [
@@ -99,7 +96,7 @@ export default function Game() {
             }
 
             let newIndex = convertPositionToIndex(newPosition);
-            console.log(newIndex);
+            (newIndex);
             setselectedTileIndex(newIndex);
         }
 

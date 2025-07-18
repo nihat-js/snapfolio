@@ -2,7 +2,7 @@ import { log } from "console";
 
 export const general = {
   shortBio: "Don't think outside of the box. Think like there is no box.",
-  longBio: ` I'm a motivated full-stack web developer, specializing in PHP,
+  longBio: ` I'm a motivated full stack developer, specializing in PHP,
   Laravel, and Next.js. I have a passion for creating efficient and scalable web applications, and I'm always eager to learn new technologies. My goal is to build innovative solutions that make a difference in people's lives.`,
   profileImage: "",
   mail: "a",
